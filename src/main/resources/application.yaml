@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  datasource:
+    username: root
+    password: 612612
+    url: jdbc:mysql://localhost:3306/dreamcloud?serverTimezone=Asia/Shanghai&userUnicode=true&characterEncoding=utf8&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false
+  resources:
+    static-locations:
+      - classpath:/META-INF/resources/
+      - classpath:/resources/
+      - classpath:/static/
+      - classpath:/public/
+      - file:${uploadfilepath}
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.lj.dreamcloud.pojo
+  mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 8080
+uploadfilepath: E:/IdeaProjects/dreamcloud-file/
+---
+
