@@ -13,4 +13,6 @@ public interface ImgOrderService {
     List<ImgOrder> getImgUndisposed();
 
     List<ImgOrder> getImgdisposed();
+
+    int imgHaveDownloaded(String filename);
 }

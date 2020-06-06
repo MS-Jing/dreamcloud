@@ -316,7 +316,7 @@ function ImgInputFileChanged(e) {
          // console.log(base64);
 
          $.ajax({
-             url:"http://localhost:8080/dreamcloud/img/uploid",
+             url:"/dreamcloud/img/uploid",
              type:"POST",
              data:{
                  "username" : this.name,

@@ -13,4 +13,8 @@
     <select id="getImgdisposed" resultType="ImgOrder">
         select * from img_order where sta="0"
     </select>
+
+    <update id="imgHaveDownloaded" parameterType="java.lang.String">
+        update img_order set sta="0" where imgname=#{imgname}
+    </update>
 </mapper>

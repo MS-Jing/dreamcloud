@@ -33,4 +33,9 @@ public class ImgOrderServiceImpl implements ImgOrderService {
     public List<ImgOrder> getImgdisposed() {
         return imgOrderMapper.getImgdisposed();
     }
+
+    @Override
+    public int imgHaveDownloaded(String filename) {
+        return imgOrderMapper.imgHaveDownloaded(filename);
+    }
 }

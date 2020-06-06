@@ -1,13 +1,13 @@
 spring:
   profiles:
-    active: dev
+    active: public
 ---
 spring:
   profiles: dev
   datasource:
-    username: root
-    password: 612612
-    url: jdbc:mysql://localhost:3306/dreamcloud?serverTimezone=Asia/Shanghai&userUnicode=true&characterEncoding=utf8&useSSL=true
+    username: myuser
+    password: luojing612612
+    url: jdbc:mysql://47.98.164.190:3306/dreamcloud?serverTimezone=Asia/Shanghai&userUnicode=true&characterEncoding=utf8&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
   thymeleaf:
     cache: false
@@ -33,4 +33,33 @@ server:
 uploadfilepath: E:/IdeaProjects/dreamcloud-file/
 userpassword: e40f01afbb1b9ae3dd6747ced5bca532
 ---
+spring:
+  profiles: public
+  datasource:
+    username: myuser
+    password: luojing612612
+    url: jdbc:mysql://47.98.164.190:3306/dreamcloud?serverTimezone=Asia/Shanghai&userUnicode=true&characterEncoding=utf8&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false
+  resources:
+    static-locations:
+      - classpath:/META-INF/resources/
+      - classpath:/resources/
+      - classpath:/static/
+      - classpath:/public/
+      - file:${uploadfilepath}
 
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.lj.dreamcloud.pojo
+  mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dreamcloud
+uploadfilepath: /home/MyProject/dreamcloud-file/
+userpassword: e40f01afbb1b9ae3dd6747ced5bca532

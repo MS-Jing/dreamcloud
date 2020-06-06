@@ -35,12 +35,15 @@ public class ImgManageController {
 
         model.addAttribute("imgdisposed",imgdisposed);
         model.addAttribute("imgUndisposed",imgUndisposed);
-        return "/main";
+        return "main";
     }
 
     @GetMapping("/download/{fliename}")
     public String downloads(@PathVariable("fliename") String fliename, HttpServletResponse response) throws IOException {
-        System.out.println(fliename);
+
+        imgOrderService.imgHaveDownloaded(fliename);
+
+//        System.out.println(fliename);
         //下载地址
         String path = imgfilePath+fliename;
         //设置response响应头

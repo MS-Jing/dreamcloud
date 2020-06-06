@@ -15,4 +15,6 @@ public interface ImgOrderMapper {
     List<ImgOrder> getImgUndisposed();
 
     List<ImgOrder> getImgdisposed();
+
+    int imgHaveDownloaded(String filename);
 }
