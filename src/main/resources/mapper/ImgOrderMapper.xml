@@ -5,4 +5,12 @@
     <insert id="addImgOrder" parameterType="ImgOrder">
         insert into img_order(username,tel,qq,imgname) values(#{username},#{tel},#{qq},#{imgname});
     </insert>
+
+    <select id="getImgUndisposed" resultType="ImgOrder">
+        select * from img_order where sta="1"
+    </select>
+
+    <select id="getImgdisposed" resultType="ImgOrder">
+        select * from img_order where sta="0"
+    </select>
 </mapper>

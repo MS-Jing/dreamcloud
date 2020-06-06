@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ImgOrderServiceImpl implements ImgOrderService {
 
@@ -20,5 +22,15 @@ public class ImgOrderServiceImpl implements ImgOrderService {
             return true;
         };
         return false;
+    }
+
+    @Override
+    public List<ImgOrder> getImgUndisposed() {
+        return imgOrderMapper.getImgUndisposed();
+    }
+
+    @Override
+    public List<ImgOrder> getImgdisposed() {
+        return imgOrderMapper.getImgdisposed();
     }
 }

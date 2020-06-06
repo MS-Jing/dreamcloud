@@ -316,7 +316,7 @@ function ImgInputFileChanged(e) {
          // console.log(base64);
 
          $.ajax({
-             url:"http://localhost:8080/img/uploid",
+             url:"http://localhost:8080/dreamcloud/img/uploid",
              type:"POST",
              data:{
                  "username" : this.name,
@@ -326,7 +326,11 @@ function ImgInputFileChanged(e) {
              },
              async:true,
              success:function (result) {
-                console.log(result);
+                // console.log(result);
+                if (result.imgUpLoidStatus=="ok"&&result.infoStatus=="ok"){
+                    alert("照片上传成功！管理员正在加急处理...");
+                    window.location.reload();
+                }
              },
              error:function (jqXHR, textStatus, errorThrown) {
                 alert(jqXHR.status+","+textStatus+"请联系管理员");

@@ -19,6 +19,7 @@ spring:
       - classpath:/public/
       - file:${uploadfilepath}
 
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
@@ -27,6 +28,9 @@ mybatis:
 
 server:
   port: 8080
+  servlet:
+    context-path: /dreamcloud
 uploadfilepath: E:/IdeaProjects/dreamcloud-file/
+userpassword: e40f01afbb1b9ae3dd6747ced5bca532
 ---
 

@@ -43,7 +43,7 @@ public class ImgOrderController {
 
         //去掉base编码的头部
         String file = upLoidImg.getFile().substring(23);
-        System.out.println(file);
+//        System.out.println(file);
         //解码
         byte[] imgByte = decoder.decode(file);
 
