@@ -25,7 +25,7 @@ public class AdminController {
             return "redirect:/admin/main";
         }else{
             model.addAttribute("msg","账号或者密码错误！");
-            return "/login";
+            return "login";
         }
     }
 }
